@@ -43,6 +43,10 @@ namespace BuisenessLayer
             return fakemodel;
 
         }
+        public async Task BgMailService(BgMailModel bgMailModel) 
+        {
+          await _repository.BgMailSender(bgMailModel);
+        }
         public async Task SendMailEmployee(int id, string konu, string icerik) {
             
               await  _repository.SendMailEmployee(id, konu, icerik);

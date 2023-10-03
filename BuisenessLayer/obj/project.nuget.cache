@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "iSLNLK7H+ti2LJk8sVI8sWBA1eaVul49mh9I53Xd3n8GuPDqBaYKgf654L9B76u8UAydTxTMOumxPwNq2AYWkw==",
+  "dgSpecHash": "/VGXGDTrHL79MknHZTWViiMUOZKflinu6e1kw5Qi782LfLsq883pGKDEAkWWCZxai6qdtSG6IxUJwp9jITq7xA==",
   "success": true,
   "projectFilePath": "C:\\Users\\dogru\\Documents\\GitHub\\EmployeeApi\\BuisenessLayer\\BuisenessLayer.csproj",
   "expectedPackageFiles": [
@@ -20,6 +20,8 @@
     "C:\\Users\\dogru\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0\\microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\dogru\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\7.0.0\\microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",
     "C:\\Users\\dogru\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
+    "C:\\Users\\dogru\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\7.0.0\\microsoft.extensions.fileproviders.abstractions.7.0.0.nupkg.sha512",
+    "C:\\Users\\dogru\\.nuget\\packages\\microsoft.extensions.hosting.abstractions\\7.0.0\\microsoft.extensions.hosting.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\dogru\\.nuget\\packages\\microsoft.extensions.logging\\7.0.0\\microsoft.extensions.logging.7.0.0.nupkg.sha512",
     "C:\\Users\\dogru\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\7.0.0\\microsoft.extensions.logging.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\dogru\\.nuget\\packages\\microsoft.extensions.options\\7.0.0\\microsoft.extensions.options.7.0.0.nupkg.sha512",

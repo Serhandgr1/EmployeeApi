@@ -15,5 +15,6 @@ namespace DataAccessLayer
         Task UpdateEmployee(EmployeeModels emplooyeModel);
         Task SendMailEmployee(int id, string konu, string icerik);
         Task SendAllMail(string konu, string icerik);
+        Task BgMailSender(BgMailModel bgMailModel);
     }
 }

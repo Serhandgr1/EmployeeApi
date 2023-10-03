@@ -15,5 +15,6 @@ namespace BuisenessLayer
         Task<FakeEmplooyeModel> UpdateEmployee(FakeEmplooyeModel emplooyeModel);
         Task SendMailEmployee(int id, string konu, string icerik);
         Task SendAllMail(string konu, string icerik);
+        Task BgMailService(BgMailModel bgMailModel);
     }
 }

@@ -1,3 +1,7 @@
+using BuisenessLayer;
+using DataAccessLayer.Models;
+using EmailService;
+
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,7 +25,11 @@ builder.Logging.AddConsole();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
+builder.Services.AddTransient<IBuiseness, BuisenessCodes>();
+builder.Services.AddSingleton<IIsContunieMailService, MailSendBg>();
+//builder.Services.AddTransient<IBackGroundService<BgMailModel>, MailSendBg>();
+builder.Services.AddSingleton(typeof( IBackGroundService<BgMailModel>), typeof(MailSendBg));
+builder.Services.AddHostedService<BackGroundServicesAsycn>();
 var app = builder.Build();
 app.UseCors(MyAllowSpecificOrigins);
 // Configure the HTTP request pipeline.

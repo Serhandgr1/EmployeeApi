@@ -31,6 +31,15 @@ namespace DataAccessLayer
 
 
         }
+        public async Task BgMailSender(BgMailModel bgMailModel) 
+        {
+            using (var db = new DataContext(_configuration))
+            { 
+               await db.SendMail.AddAsync(bgMailModel);
+               await db.SaveChangesAsync();
+            }
+
+        }
         public async Task SendMailEmployee(int id, string konu, string icerik) 
         {
             using (var db = new DataContext(_configuration))
