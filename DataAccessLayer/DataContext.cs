@@ -26,5 +26,6 @@ namespace DataAccessLayer
 
         public DbSet<EmployeeModels> Emplooye { get; set; }
         public DbSet<BgMailModel> SendMail { get; set; }
+        public DbSet<BackGroundServiceControllerModel> BackGroundServiceController { get; set; }
     }
 }

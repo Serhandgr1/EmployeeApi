@@ -33,7 +33,7 @@ namespace EmployeeManage.Controllers
 
         }
         [HttpPost("try-mail-service")]
-        public async ValueTask TryMailService(bool item) 
+        public async ValueTask TryMailService(BackGroundServiceControllerModel item) 
         {
             await _isContunieMailService.IsContinueAdd(item);
         }

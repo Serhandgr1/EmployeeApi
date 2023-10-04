@@ -29,6 +29,7 @@ builder.Services.AddTransient<IBuiseness, BuisenessCodes>();
 builder.Services.AddSingleton<IIsContunieMailService, MailSendBg>();
 //builder.Services.AddTransient<IBackGroundService<BgMailModel>, MailSendBg>();
 builder.Services.AddSingleton(typeof( IBackGroundService<BgMailModel>), typeof(MailSendBg));
+builder.Services.AddHostedService<BackGroundServiceSecond>();
 builder.Services.AddHostedService<BackGroundServicesAsycn>();
 var app = builder.Build();
 app.UseCors(MyAllowSpecificOrigins);

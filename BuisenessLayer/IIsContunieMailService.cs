@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataAccessLayer.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,9 @@ namespace BuisenessLayer
 {
     public interface IIsContunieMailService
     {
-        ValueTask<bool> IsContinueRead(CancellationToken cancellationToken);
-        ValueTask IsContinueAdd(bool item);
+        ValueTask<BackGroundServiceControllerModel> IsContinueRead(CancellationToken cancellationToken);
+        ValueTask IsContinueAdd(BackGroundServiceControllerModel item);
+        ValueTask IsWorkingAdd(bool item);
+        ValueTask<bool> IsWorkingRead(CancellationToken cancellationToken);
     }
 }
