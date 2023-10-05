@@ -17,6 +17,7 @@ namespace BuisenessLayer
         private readonly Channel<BgMailModel> channel;
         private readonly Channel<BackGroundServiceControllerModel> IsContinue;
         private readonly Channel<bool> IsWork;
+        public bool Stop;
 
         public MailSendBg(IConfiguration configuration)
         {
@@ -56,11 +57,16 @@ namespace BuisenessLayer
         {
             ArgumentNullException.ThrowIfNull(item);
             await IsWork.Writer.WriteAsync(item);
+            Stop = item;
         }
         public ValueTask<bool> IsWorkingRead(CancellationToken cancellationToken)
         {
             var wrok = IsWork.Reader.ReadAsync(cancellationToken);
             return wrok;
+        }
+        public bool IsWorkingStop()
+        {
+            return Stop;
         }
     }
 }

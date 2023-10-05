@@ -20,7 +20,8 @@ namespace BuisenessLayer
             bool  a = Convert.ToBoolean(item2);
             while (a) 
             {
-                var b = await _ısContunieMailService.IsWorkingRead(stoppingToken);
+                await Task.Delay(10000);
+                var b =  _ısContunieMailService.IsWorkingStop();               
                 if (b != null) 
                 {
                     a = Convert.ToBoolean(b);
