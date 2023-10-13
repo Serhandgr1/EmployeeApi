@@ -11,8 +11,8 @@ namespace BuisenessLayer
     {
         ValueTask<BackGroundServiceControllerModel> IsContinueRead(CancellationToken cancellationToken);
         ValueTask IsContinueAdd(BackGroundServiceControllerModel item);
-        ValueTask IsWorkingAdd(bool item);
-        ValueTask<bool> IsWorkingRead(CancellationToken cancellationToken);
-        bool IsWorkingStop();
+        ValueTask IsWorkingAdd(BackGroundServiceControllerModel item);
+        ValueTask<BackGroundServiceControllerModel> IsWorkingRead(CancellationToken cancellationToken);
+        BackGroundServiceControllerModel IsWorkingStop();
     }
 }

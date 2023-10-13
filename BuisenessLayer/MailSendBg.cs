@@ -16,8 +16,8 @@ namespace BuisenessLayer
     {
         private readonly Channel<BgMailModel> channel;
         private readonly Channel<BackGroundServiceControllerModel> IsContinue;
-        private readonly Channel<bool> IsWork;
-        public bool Stop;
+        private readonly Channel<BackGroundServiceControllerModel> IsWork;
+        public  BackGroundServiceControllerModel Stop;
 
         public MailSendBg(IConfiguration configuration)
         {
@@ -28,7 +28,7 @@ namespace BuisenessLayer
             };
             channel = Channel.CreateBounded<BgMailModel>(options);
             IsContinue = Channel.CreateBounded<BackGroundServiceControllerModel>(options);
-            IsWork = Channel.CreateBounded<bool>(options);
+            IsWork = Channel.CreateBounded<BackGroundServiceControllerModel>(options);
         }
         public async ValueTask AddMail(BgMailModel mailsender)
         {
@@ -53,18 +53,18 @@ namespace BuisenessLayer
             return item;
             // buisennes coda bir metod yaz datarepostorye bir metod yaz veri tabanının mail gönderilenler kısmına ekle maili 
         }
-        public async  ValueTask IsWorkingAdd(bool item) 
+        public async  ValueTask IsWorkingAdd(BackGroundServiceControllerModel item) 
         {
             ArgumentNullException.ThrowIfNull(item);
             await IsWork.Writer.WriteAsync(item);
             Stop = item;
         }
-        public ValueTask<bool> IsWorkingRead(CancellationToken cancellationToken)
+        public ValueTask<BackGroundServiceControllerModel> IsWorkingRead(CancellationToken cancellationToken)
         {
             var wrok = IsWork.Reader.ReadAsync(cancellationToken);
             return wrok;
         }
-        public bool IsWorkingStop()
+        public BackGroundServiceControllerModel IsWorkingStop()
         {
             return Stop;
         }

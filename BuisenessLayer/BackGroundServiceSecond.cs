@@ -17,14 +17,14 @@ namespace BuisenessLayer
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             var item2 = await _ısContunieMailService.IsWorkingRead(stoppingToken);
-            bool  a = Convert.ToBoolean(item2);
+            bool  a = Convert.ToBoolean(item2.IsWork);
             while (a) 
             {
                 await Task.Delay(10000);
                 var b =  _ısContunieMailService.IsWorkingStop();               
                 if (b != null) 
                 {
-                    a = Convert.ToBoolean(b);
+                    a = Convert.ToBoolean(b.IsWork);
                 }
             }
             ExecuteAsync(stoppingToken);
