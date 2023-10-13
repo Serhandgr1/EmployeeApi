@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -93,6 +94,19 @@ namespace DataAccessLayer
             {
                     db.Emplooye.Update(emplooyeModel);
                     await db.SaveChangesAsync();
+            }
+        }
+
+        public async ValueTask AddNewBackgroundservice(BackGroundServiceControllerModel result)
+        {
+            using (var db = new DataContext(_configuration)) 
+            {
+              bool control= await  db.BackGroundServiceController.AnyAsync(x=>x.JobName == result.JobName);
+                if (!control) 
+                {
+                    await db.BackGroundServiceController.AddAsync(result);
+                    await db.SaveChangesAsync();
+                }
             }
         }
     }

@@ -16,5 +16,6 @@ namespace DataAccessLayer
         Task SendMailEmployee(int id, string konu, string icerik);
         Task SendAllMail(string konu, string icerik);
         Task BgMailSender(BgMailModel bgMailModel);
+        ValueTask AddNewBackgroundservice(BackGroundServiceControllerModel result);
     }
 }

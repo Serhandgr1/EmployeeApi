@@ -16,5 +16,6 @@ namespace BuisenessLayer
         Task SendMailEmployee(int id, string konu, string icerik);
         Task SendAllMail(string konu, string icerik);
         Task BgMailService(BgMailModel bgMailModel);
+        ValueTask AddNewBackgroundservice(BackGroundServiceControllerModel result);
     }
 }

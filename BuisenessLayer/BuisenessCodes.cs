@@ -79,5 +79,10 @@ namespace BuisenessLayer
           await  _repository.UpdateEmployee(employeeModels);
             return emplooyeModel;
         }
+
+        public async ValueTask AddNewBackgroundservice(BackGroundServiceControllerModel result)
+        {
+          await _repository.AddNewBackgroundservice(result);
+        }
     }
 }

@@ -37,6 +37,11 @@ namespace EmployeeManage.Controllers
         {
             await _isContunieMailService.IsContinueAdd(item);
         }
+        [HttpPost("add-new-backgroundService")]
+        public async ValueTask AddNewBackgroundService(BackGroundServiceControllerModel item)
+        {
+           await _buiseness.AddNewBackgroundservice(item);
+        }
         [HttpPost("send-mail-emp")]
         public async ValueTask SendMailEmployee(int id , string konu , string icerik)
         {
